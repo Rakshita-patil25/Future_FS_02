@@ -1,4 +1,4 @@
-# 📊 Mini CRM Dashboard
+[# 📊 Mini CRM Dashboard
 
 A full-stack Customer Relationship Management (CRM) web application built with React, Node.js, Express, and MongoDB.
 
@@ -26,8 +26,8 @@ A full-stack Customer Relationship Management (CRM) web application built with R
 
 ### 1. Clone the repository
 ```
-git clone https://github.com/YOUR_USERNAME/Mini-CRM.git
-cd Mini-CRM
+git clone https://github.com/Rakshita-patil25/Future_FS_02
+cd FUTURE_FS_02
 ```
 
 ### 2. Backend Setup
@@ -87,3 +87,4 @@ Mini-CRM/
 ## 🙋‍♂️ Author
 
 Built during internship at **Future Interns**
+](https://github.com/Rakshita-patil25/Future_FS_02/edit/main/README.md)
