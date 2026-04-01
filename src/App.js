@@ -16,8 +16,8 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const API = "http://localhost:5000/api/leads";
-  const AUTH_API = "http://localhost:5000/api/auth/login";
+  const API = "https://future-fs-02-backend-92h4.onrender.com/api/leads";
+  const AUTH_API = "https://future-fs-02-backend-92h4.onrender.com/api/auth/login";
 
   useEffect(() => {
     if (token) fetchLeads();
