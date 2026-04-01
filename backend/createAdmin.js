@@ -10,9 +10,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 async function createAdmin() {
 
-  const hashedPassword = await bcrypt.hash("123456", 10);
+  await Admin.deleteMany({});
 
-  await Admin.deleteMany({ username: "admin" });
+  const hashedPassword = await bcrypt.hash("123456", 10);
 
   const admin = new Admin({
     username: "admin",
