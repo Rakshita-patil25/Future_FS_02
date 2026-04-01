@@ -1,57 +1,72 @@
-📊 Mini CRM Dashboard
+# 📊 Mini CRM Dashboard
+
 A full-stack Customer Relationship Management (CRM) web application built with React, Node.js, Express, and MongoDB.
----
-🚀 Features
-🔐 Admin login with JWT authentication
-➕ Add, edit, delete customer leads
-📋 Track lead status: New → Contacted → Converted
-📝 Follow-up notes for each lead
-📊 Dashboard stats (Total, New, Contacted, Converted)
-🌙 Dark mode support
----
-🛠️ Tech Stack
-Frontend	Backend
-React.js	Node.js
-Axios	Express.js
-CSS (inline styles)	MongoDB + Mongoose
-	JWT Authentication
----
-⚙️ Setup Instructions
-1. Clone the repository
+
+## 🚀 Features
+
+- 🔐 Admin login with JWT authentication
+- ➕ Add, edit, delete customer leads
+- 📋 Track lead status: New → Contacted → Converted
+- 📝 Follow-up notes for each lead
+- 📊 Dashboard stats (Total, New, Contacted, Converted)
+- 🌙 Dark mode support
+
+
+## 🛠️ Tech Stack
+
+| Frontend | Backend |
+|---|---|
+| React.js | Node.js |
+| Axios | Express.js |
+| CSS (inline styles) | MongoDB + Mongoose |
+| | JWT Authentication |
+
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
 ```
-git clone https://github.com/YOUR\_USERNAME/Mini-CRM.git
+git clone https://github.com/YOUR_USERNAME/Mini-CRM.git
 cd Mini-CRM
 ```
-2. Backend Setup
+
+### 2. Backend Setup
 ```
 cd backend
 npm install
 ```
+
 Create a `.env` file inside `backend/` folder:
 ```
-MONGO\_URI=your\_mongodb\_connection\_string
-JWT\_SECRET=your\_jwt\_secret\_key
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
 PORT=5000
 ```
+
 Start the backend:
 ```
 node server.js
 ```
-3. Frontend Setup
+
+### 3. Frontend Setup
 ```
 cd frontend
 npm install
 npm start
 ```
----
-🔑 Default Admin Login
+
+
+## 🔑 Default Admin Login
+
 Run this once to create admin credentials:
 ```
 cd backend
 node seedAdmin.js
 ```
----
-📁 Project Structure
+
+
+## 📁 Project Structure
+
 ```
 Mini-CRM/
 ├── backend/
@@ -67,6 +82,8 @@ Mini-CRM/
 │   └── package.json
 └── README.md
 ```
----
-🙋‍♂️ Author
-Built during internship at Future Interns
+
+
+## 🙋‍♂️ Author
+
+Built during internship at **Future Interns**
