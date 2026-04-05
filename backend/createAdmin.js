@@ -4,24 +4,34 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const Admin = require("./models/Admin");
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("Atlas Connected"))
-  .catch(err => console.log(err));
-
 async function createAdmin() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("Atlas Connected");
 
-  const hashedPassword = await bcrypt.hash("123456", 10);
+    const existingAdmin = await Admin.findOne({ username: "admin" });
 
-  const admin = new Admin({
-    username: "admin",
-    password: hashedPassword
-  });
+    if (existingAdmin) {
+      console.log("Admin already exists");
+      return mongoose.disconnect();
+    }
 
-  await admin.save();
+    const hashedPassword = await bcrypt.hash("admin123", 10);
 
-  console.log("Admin created successfully");
+    const admin = new Admin({
+      username: "admin2",
+      password: hashedPassword
+    });
 
-  mongoose.disconnect();
+    await admin.save();
+
+    console.log("Admin created successfully");
+
+    mongoose.disconnect();
+
+  } catch (error) {
+    console.log("Error:", error);
+  }
 }
 
 createAdmin();

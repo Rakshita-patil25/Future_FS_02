@@ -27,6 +27,7 @@ router.post("/login", async (req, res) => {
 
     res.json({
       message: "Login successful",
+      token: "admin-token",   // ✅ ADD THIS
       username: admin.username
     });
 
