@@ -9,14 +9,8 @@ async function createAdmin() {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Atlas Connected");
 
-    const existingAdmin = await Admin.findOne({ username: "admin" });
-
-    if (existingAdmin) {
-      console.log("Admin already exists");
-      return mongoose.disconnect();
-    }
-
     const hashedPassword = await bcrypt.hash("admin123", 10);
+    await Admin.deleteMany({});
 
     const admin = new Admin({
       username: "admin2",
