@@ -9,7 +9,7 @@ async function createAdmin() {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Atlas Connected");
 
-    const hashedPassword = await bcrypt.hash("admin123", 10);
+    const hashedPassword = await bcrypt.hash("Admin@123", 10);
     await Admin.deleteMany({});
 
     const admin = new Admin({
