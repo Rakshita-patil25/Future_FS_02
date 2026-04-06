@@ -1,17 +1,12 @@
-const express = require("express");
-const router = express.Router();
-const bcrypt = require("bcryptjs");
-const Admin = require("../models/Admin");
-
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    console.log("Login request:", username);
+    console.log("Received:", username, password);
 
     const admin = await Admin.findOne({ username });
 
-    console.log("Admin found:", admin);
+    console.log("Admin from DB:", admin);
 
     if (!admin) {
       return res.status(401).json({ message: "Invalid credentials" });
@@ -27,7 +22,6 @@ router.post("/login", async (req, res) => {
 
     res.json({
       message: "Login successful",
-      token: "admin-token",   // ✅ ADD THIS
       username: admin.username
     });
 
@@ -36,5 +30,3 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
-
-module.exports = router;

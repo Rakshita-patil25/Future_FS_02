@@ -23,14 +23,20 @@ mongoose
     console.log("MongoDB Connection Error:", err);
   });
 
-// Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/leads", leadRoutes);
-
 // Test route
 app.get("/", (req, res) => {
   res.send("Mini CRM Server Running");
 });
+
+// Debug route (to check login hit)
+app.use("/api/auth", (req, res, next) => {
+  console.log("Auth route hit");
+  next();
+});
+
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/leads", leadRoutes);
 
 // Server Port
 const PORT = process.env.PORT || 5000;

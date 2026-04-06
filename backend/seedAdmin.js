@@ -1,20 +1,20 @@
 require("dotenv").config();
-
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 const Admin = require("./models/Admin");
-
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
 
 const createAdmin = async () => {
   try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB connected");
+
     await Admin.deleteMany();
+
+    const hashedPassword = await bcrypt.hash("123456", 10);
 
     const admin = new Admin({
       username: "admin",
-      password: "123456",
+      password: hashedPassword,
     });
 
     await admin.save();
