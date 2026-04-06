@@ -1,4 +1,5 @@
 require("dotenv").config();
+console.log("JWT_SECRET:", process.env.JWT_SECRET); // ← debug line
 
 const express = require("express");
 const mongoose = require("mongoose");

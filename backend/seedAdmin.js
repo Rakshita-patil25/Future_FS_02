@@ -1,7 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-const Admin = require("./models/Admin");
+const Admin = require("./models/Admin");  // ✅ bcrypt import not needed anymore
 
 const createAdmin = async () => {
   try {
@@ -10,17 +9,14 @@ const createAdmin = async () => {
 
     await Admin.deleteMany();
 
-    const hashedPassword = await bcrypt.hash("123456", 10);
-
     const admin = new Admin({
       username: "admin",
-      password: hashedPassword,
+      password: "123456",  // ✅ plain text
     });
 
-    await admin.save();
+    await admin.save();  // pre-save hook hashes it once
 
     console.log("Admin created successfully");
-
     mongoose.connection.close();
 
   } catch (error) {

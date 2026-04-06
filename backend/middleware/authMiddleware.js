@@ -12,7 +12,7 @@ const authMiddleware = (req, res, next) => {
 
   try {
 
-    const decoded = jwt.verify(token, "secret123");
+    const decoded = jwt.verify(token, process.env.JWT_SECRET); // ✅ use env variable
 
     req.admin = decoded;
 
