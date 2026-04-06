@@ -19,9 +19,10 @@ function App() {
   const API = "https://future-fs-02-backend-92h4.onrender.com/api/leads";
   const AUTH_API = "https://future-fs-02-backend-92h4.onrender.com/api/auth/login";
 
-  useEffect(() => {
-    if (token) fetchLeads();
-  }, [token]);
+ useEffect(() => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  if (token) fetchLeads();
+}, [token]);
 
   const fetchLeads = async () => {
     const res = await axios.get(API, {
