@@ -6,12 +6,12 @@ Here's your complete updated README with login credentials added:
 A full-stack Customer Relationship Management (CRM) web application built with React, Node.js, Express, and MongoDB.
 
 ## 🌐 Live Demo
-- **Frontend:** https://future-fs-02-1-oz5v.onrender.com
-- **Backend API:** https://future-fs-02-backend-92h4.onrender.com
+- Frontend: https://future-fs-02-1-oz5v.onrender.com
+- Backend API: https://future-fs-02-backend-92h4.onrender.com
 
 ## 🔑 Demo Login Credentials
-- **Username:** admin
-- **Password:** 123456
+- Username: admin
+- Password: 123456
 
 ## 🚀 Features
 - 🔐 Admin login with JWT authentication
